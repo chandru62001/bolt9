@@ -15,9 +15,9 @@ function ProfilePage() {
   const [formData, setFormData] = useState({
     name: user?.name || '',
     email: user?.email || '',
-    phone: '',
-    location: '',
-    bio: '',
+    phone: user?.phone || '',
+    location: user?.location || '',
+    bio: user?.bio || '',
     emergencyContactEmail: user?.emergencyContactEmail || '',
     emergencyContactRelation: user?.emergencyContactRelation || '',
     age: user?.age || '',
@@ -96,9 +96,9 @@ function ProfilePage() {
     setFormData({
       name: user?.name || '',
       email: user?.email || '',
-      phone: '',
-      location: '',
-      bio: '',
+      phone: user?.phone || '',
+      location: user?.location || '',
+      bio: user?.bio || '',
       emergencyContactEmail: user?.emergencyContactEmail || '',
       emergencyContactRelation: user?.emergencyContactRelation || '',
       age: user?.age || '',
@@ -338,6 +338,7 @@ function ProfilePage() {
                   }`}
                 />
               </div>
+
               {/* Role-specific fields */}
               {user.role === 'patient' && (
                 <>
